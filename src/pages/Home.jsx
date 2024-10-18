@@ -8,7 +8,9 @@ export default function Home(){
         <>
             <CardContainer titulo="Filmes antigos">
             {
-                movies.map(filme => (
+                movies
+                .filter(filme => (filme.ano_lancamento < 2000)) //Adicionando filtro
+                .map(filme => (
                     <MovieCard key={filme.id}{...filme}/> //Spread Array
                 ))
             }
